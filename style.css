@@ -332,3 +332,27 @@ footer {
         transform: translateY(0);
     }
 }
+/* --- Tech Tags for Projects --- */
+.tech-tags {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem; /* Add space before the button */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tags span {
+    background-color: var(--secondary-card-color);
+    color: var(--text-primary);
+    padding: 0.3rem 0.85rem;
+    border-radius: 9999px; /* This creates the pill shape */
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+}
+
+.tech-tags span:hover {
+    background-color: var(--accent-color);
+    color: var(--text-highlight);
+}
