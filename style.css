@@ -46,6 +46,27 @@ header p {
     letter-spacing: 1px;
 }
 
+/* --- Typing Animation Styles --- */
+#subtitle {
+    display: inline-block;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2rem;
+    background-color: var(--accent-color);
+    animation: blink 1s infinite;
+    margin-left: 4px;
+    position: relative;
+    top: 3px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 /* --- Navigation Links --- */
 nav {
     text-align: center;
@@ -61,7 +82,7 @@ nav a {
     font-weight: 600;
     font-size: 1rem;
     transition: color 0.3s ease, transform 0.3s ease;
-    display: inline-block; /* Allows transform to work */
+    display: inline-block;
 }
 
 nav a:hover {
@@ -69,19 +90,124 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
+/* --- About Me Section --- */
+#about {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--primary-card-color);
+}
+
+#about h2, #experience h2, #education h2, #projects h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-highlight);
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* --- Timeline Styling for Experience & Education --- */
+#experience, #education {
+    padding: 4rem 2rem;
+}
+
+#education {
+    background-color: var(--primary-card-color);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    width: 4px;
+    background: var(--secondary-card-color);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    opacity: 0; /* For scroll animation */
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 11px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    border: 4px solid var(--bg-color);
+    z-index: 1;
+}
+
+/* Adjust the dot's border color to match the section's background */
+#education .timeline-item::before {
+    border: 4px solid var(--primary-card-color);
+}
+
+
+.timeline-content {
+    position: relative;
+    margin-left: 60px;
+    background-color: var(--primary-card-color);
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+}
+
+#experience .timeline-content {
+    background-color: var(--bg-color); /* Swap background for contrast */
+}
+
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: var(--text-highlight);
+    font-size: 1.5rem;
+}
+
+.timeline-content h4 {
+    margin: 0.25rem 0 1rem 0;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.timeline-content p {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.timeline-date {
+    display: block;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+
 /* --- Main Content & Projects Section --- */
 main {
     max-width: 900px;
     margin: 0 auto;
     padding: 2rem;
-}
-
-#projects h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-    color: var(--text-highlight);
 }
 
 /* --- Project Card Styling --- */
@@ -93,7 +219,7 @@ main {
     box-shadow: var(--box-shadow-main);
     opacity: 0; /* Initially invisible for animation */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 5px solid transparent; /* For hover effect */
+    border-left: 5px solid transparent;
 }
 
 .project:hover {
@@ -181,50 +307,4 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* The animation will be triggered by your script.js file */
-.project {
-    /* ... existing .project styles ... */
-   
-}
-/* --- Typing Animation Styles --- */
-#subtitle {
-    display: inline-block; /* Ensures the element only takes up the width of its content */
-}
-
-.typing-cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1.2rem; /* Match the font size */
-    background-color: var(--accent-color);
-    animation: blink 1s infinite;
-    margin-left: 4px;
-    position: relative;
-    top: 3px;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-/* --- About Me Section --- */
-#about {
-    text-align: center;
-    padding: 4rem 2rem;
-    background-color: var(--primary-card-color);
-}
-
-#about h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: var(--text-highlight);
-}
-
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    color: var(--text-secondary);
 }
