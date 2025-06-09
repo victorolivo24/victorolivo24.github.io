@@ -186,5 +186,45 @@ footer {
 /* The animation will be triggered by your script.js file */
 .project {
     /* ... existing .project styles ... */
-    animation: fadeInUp 0.8s ease forwards;
+   
+}
+/* --- Typing Animation Styles --- */
+#subtitle {
+    display: inline-block; /* Ensures the element only takes up the width of its content */
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2rem; /* Match the font size */
+    background-color: var(--accent-color);
+    animation: blink 1s infinite;
+    margin-left: 4px;
+    position: relative;
+    top: 3px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+/* --- About Me Section --- */
+#about {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--primary-card-color);
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-highlight);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
 }
