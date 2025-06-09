@@ -289,11 +289,36 @@ main {
 /* --- Footer --- */
 footer {
     text-align: center;
-    padding: 2rem 0;
+    padding: 3rem 2rem;
     margin-top: 4rem;
+    border-top: 1px solid var(--primary-card-color);
+}
+
+.contact-info {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.contact-info a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.contact-info span {
+    color: var(--secondary-card-color);
+    margin: 0 0.5rem;
+}
+
+.copyright {
     font-size: 0.9rem;
     color: var(--text-secondary);
-    border-top: 1px solid var(--primary-card-color);
+    margin: 0;
 }
 
 /* --- Animation for Scroll --- */
