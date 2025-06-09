@@ -1,0 +1,190 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- CSS Variables (Root) for Easy Theme Management --- */
+:root {
+    --bg-color: #1a1a2e; /* Dark Navy Blue */
+    --primary-card-color: #162447; /* Slightly Lighter Navy */
+    --secondary-card-color: #1f4068; /* A more distinct blue for contrast */
+    --accent-color: #7f5af0; /* Vibrant Purple */
+    --text-primary: #e0e0e0; /* Off-white for readability */
+    --text-secondary: #a7a9be; /* Lighter grey for subtext */
+    --text-highlight: #ffffff; /* Pure white for headers */
+    --border-radius-main: 12px;
+    --box-shadow-main: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+}
+
+/* --- General Body & Typography --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Header Section --- */
+header {
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-highlight);
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+}
+
+/* --- Navigation Links --- */
+nav {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--primary-card-color);
+    border-bottom: 1px solid var(--primary-card-color);
+}
+
+nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block; /* Allows transform to work */
+}
+
+nav a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* --- Main Content & Projects Section --- */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+#projects h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--text-highlight);
+}
+
+/* --- Project Card Styling --- */
+.project {
+    background-color: var(--primary-card-color);
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--box-shadow-main);
+    opacity: 0; /* Initially invisible for animation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid transparent; /* For hover effect */
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8);
+    border-left: 5px solid var(--accent-color);
+}
+
+.project h3 {
+    font-size: 1.75rem;
+    margin-top: 0;
+    color: var(--text-highlight);
+}
+
+.project h4 {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-top: 1.5rem;
+    border-bottom: 1px solid var(--secondary-card-color);
+    padding-bottom: 0.5rem;
+}
+
+.project p {
+    color: var(--text-secondary);
+}
+
+.project .award {
+    background-color: rgba(127, 90, 240, 0.1);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.project ul {
+    list-style: none;
+    padding-left: 0;
+    color: var(--text-secondary);
+}
+
+.project ul li::before {
+    content: '›';
+    margin-right: 0.75rem;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* --- Button Styling (for GitHub links) --- */
+.button {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--text-highlight);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background: #6a44d3; /* Slightly darker purple */
+    transform: scale(1.05);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--primary-card-color);
+}
+
+/* --- Animation for Scroll --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* The animation will be triggered by your script.js file */
+.project {
+    /* ... existing .project styles ... */
+    animation: fadeInUp 0.8s ease forwards;
+}
