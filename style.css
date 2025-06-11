@@ -1,81 +1,117 @@
-/* --- Google Font Import --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* ---
+Modern Portfolio Stylesheet
+--- */
 
-/* --- CSS Variables (Root) for Easy Theme Management --- */
+/* --- Google Font Import: Inter --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* --- CSS Variables: New Color Palette --- */
 :root {
-    --bg-color: #1a1a2e; /* Dark Navy Blue */
-    --primary-card-color: #162447; /* Slightly Lighter Navy */
-    --secondary-card-color: #1f4068; /* A more distinct blue for contrast */
-    --accent-color: #7f5af0; /* Vibrant Purple */
-    --text-primary: #e0e0e0; /* Off-white for readability */
-    --text-secondary: #a7a9be; /* Lighter grey for subtext */
+    --bg-color: #0d1117; /* GitHub Dark Background */
+    --primary-card-color: #161b22; /* GitHub Dark Card */
+    --border-color: #30363d; /* GitHub Dark Border */
+    --accent-gradient: linear-gradient(45deg, #238636, #38a54a); /* Green Accent */
+    --accent-color-primary: #2ea043;
+    --text-primary: #c9d1d9; /* Main text */
+    --text-secondary: #8b949e; /* Lighter grey for subtext */
     --text-highlight: #ffffff; /* Pure white for headers */
-    --border-radius-main: 12px;
-    --box-shadow-main: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+    --border-radius-main: 8px;
+    --box-shadow-main: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* --- General Body & Typography --- */
+/* --- General & Body --- */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Header Section --- */
+/* --- Header & Particle Background --- */
 header {
+    position: relative;
     text-align: center;
-    padding: 6rem 2rem;
+    padding: 8rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* Make header taller */
+    border-bottom: 1px solid var(--border-color);
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 700;
     color: var(--text-highlight);
     margin-bottom: 0.5rem;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
 }
 
 header p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: var(--accent-color);
-    letter-spacing: 1px;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
 }
 
-/* --- Typing Animation Styles --- */
-#subtitle {
-    display: inline-block;
-}
-
+/* --- Typing Animation --- */
 .typing-cursor {
     display: inline-block;
-    width: 2px;
-    height: 1.2rem;
-    background-color: var(--accent-color);
+    width: 3px;
+    height: 1.3rem;
+    background: var(--accent-color-primary);
     animation: blink 1s infinite;
-    margin-left: 4px;
+    margin-left: 5px;
     position: relative;
-    top: 3px;
+    top: 4px;
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+    0%, 100% { background-color: var(--accent-color-primary); }
+    50% { background-color: transparent; }
 }
 
-/* --- Navigation Logo Links --- */
+/* --- Navigation Bar (Sticky) --- */
 nav {
-    text-align: center;
-    padding: 1.5rem 0;
-    border-top: 1px solid var(--primary-card-color);
-    border-bottom: 1px solid var(--primary-card-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1.25rem 0;
+    background-color: transparent;
+    border-bottom: 1px solid transparent; /* Hidden until sticky */
+    transition: background-color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
     display: flex;
     justify-content: center;
-    gap: 2.5rem; /* Space between logos */
+    gap: 2.5rem;
+}
+
+nav.nav-sticky {
+    background-color: hsla(217, 28%, 10%, 0.8); /* Semi-transparent */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -84,161 +120,117 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--accent-color);
-    transform: scale(1.2); /* Zoom effect */
+    color: var(--text-highlight);
+    transform: translateY(-2px);
 }
 
 .social-icon {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
 }
 
-/* --- About Me Section --- */
+/* --- Section Styling --- */
+section, main {
+    padding: 5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 #about {
-    text-align: center;
-    padding: 4rem 2rem;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     background-color: var(--primary-card-color);
 }
 
-#about h2, #experience h2, #education h2, #projects h2 {
+#education, #experience, #projects {
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* --- Headings --- */
+h2 {
     font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
     color: var(--text-highlight);
     text-align: center;
 }
 
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-}
-
-/* --- Timeline Styling for Experience & Education --- */
-#experience, #education {
-    padding: 4rem 2rem;
-}
-
-#education {
-    background-color: var(--primary-card-color);
-}
-
+/* --- Timeline --- */
 .timeline {
     position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 20px;
-    height: 100%;
-    width: 4px;
-    background: var(--secondary-card-color);
-    border-radius: 2px;
+    top: 15px;
+    left: 10px;
+    height: calc(100% - 15px);
+    width: 2px;
+    background: var(--border-color);
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 2.5rem;
-    opacity: 0; /* For scroll animation */
+    margin-bottom: 3rem;
+    opacity: 0;
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
     top: 5px;
-    left: 11px;
+    left: 0px;
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: var(--accent-color);
-    border: 4px solid var(--bg-color);
+    background: var(--accent-color-primary);
+    border: 5px solid var(--bg-color);
     z-index: 1;
 }
 
-#education .timeline-item::before {
-    border: 4px solid var(--primary-card-color);
+#about .timeline-item::before {
+     border-color: var(--primary-card-color);
 }
 
 .timeline-content {
     position: relative;
-    margin-left: 60px;
-    background-color: var(--primary-card-color);
-    padding: 1.5rem 2rem;
-    border-radius: var(--border-radius-main);
-    box-shadow: var(--box-shadow-main);
-}
-
-#experience .timeline-content {
-    background-color: var(--bg-color);
+    margin-left: 50px;
 }
 
 .timeline-content h3 {
     margin-top: 0;
     color: var(--text-highlight);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
 .timeline-content h4 {
-    margin: 0.25rem 0 1rem 0;
-    color: var(--accent-color);
-    font-weight: 600;
-}
-
-.timeline-content p {
-    margin-bottom: 0.5rem;
+    margin: 0.25rem 0 0.75rem 0;
     color: var(--text-secondary);
+    font-weight: 500;
 }
 
-.timeline-date {
-    display: block;
-    font-weight: 600;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-}
-
-/* --- Main Content & Projects Section --- */
-main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* --- Project Card Styling --- */
+/* --- Project Cards --- */
 .project {
     background-color: var(--primary-card-color);
-    margin: 2rem 0;
-    padding: 2rem;
+    margin-bottom: 2.5rem;
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
     border-radius: var(--border-radius-main);
-    box-shadow: var(--box-shadow-main);
-    opacity: 0; /* Initially invisible for animation */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 5px solid transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    opacity: 0;
 }
 
 .project:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8);
-    border-left: 5px solid var(--accent-color);
+    transform: translateY(-5px);
+    border-color: var(--accent-color-primary);
 }
 
 .project h3 {
-    font-size: 1.75rem;
     margin-top: 0;
-    color: var(--text-highlight);
-}
-
-.project h4 {
-    font-size: 1.1rem;
-    color: var(--accent-color);
-    margin-top: 1.5rem;
-    border-bottom: 1px solid var(--secondary-card-color);
-    padding-bottom: 0.5rem;
+    font-size: 1.75rem;
 }
 
 .project p {
@@ -246,57 +238,58 @@ main {
 }
 
 .project .award {
-    background-color: rgba(127, 90, 240, 0.1);
-    color: var(--accent-color);
+    background: rgba(46, 160, 67, 0.15);
+    border: 1px solid var(--accent-color-primary);
+    color: var(--text-highlight);
     padding: 0.5rem 1rem;
     border-radius: 6px;
     display: inline-block;
-    margin-top: 1rem;
-    font-weight: 600;
+    margin: 1rem 0;
+    font-weight: 500;
 }
 
-.project ul {
-    list-style: none;
-    padding-left: 0;
-    color: var(--text-secondary);
+/* --- Tech Tags --- */
+.tech-tags {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
-.project ul li::before {
-    content: '›';
-    margin-right: 0.75rem;
-    color: var(--accent-color);
-    font-weight: 700;
+.tech-tags span {
+    background-color: transparent;
+    color: var(--accent-color-primary);
+    border: 1px solid var(--accent-color-primary);
+    padding: 0.3rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
-/* --- Button Styling (for GitHub links) --- */
+/* --- Buttons --- */
 .button {
     display: inline-block;
-    background: var(--accent-color);
+    background-image: var(--accent-gradient);
     color: var(--text-highlight);
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
-    margin-top: 1.5rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
 }
 
 .button:hover {
-    background: #6a44d3; /* Slightly darker purple */
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(46, 160, 67, 0.4);
 }
 
 /* --- Footer --- */
 footer {
     text-align: center;
     padding: 3rem 2rem;
-    margin-top: 4rem;
-    border-top: 1px solid var(--primary-card-color);
-}
-
-.contact-info {
-    margin-bottom: 1rem;
-    font-size: 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
 }
 
 .contact-info a {
@@ -306,53 +299,46 @@ footer {
 }
 
 .contact-info a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color-primary);
     text-decoration: underline;
 }
 
-.contact-info span {
-    color: var(--secondary-card-color);
-    margin: 0 0.5rem;
+/* --- Scroll to Top Button --- */
+#scroll-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-image: var(--accent-gradient);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 999;
 }
 
-.copyright {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin: 0;
+#scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
 }
 
-/* --- Animation for Scroll --- */
+#scroll-to-top:hover {
+    transform: scale(1.1);
+}
+
+/* --- Animation Keyframes --- */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
-}
-/* --- Tech Tags for Projects --- */
-.tech-tags {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem; /* Add space before the button */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tech-tags span {
-    background-color: var(--secondary-card-color);
-    color: var(--text-primary);
-    padding: 0.3rem 0.85rem;
-    border-radius: 9999px; /* This creates the pill shape */
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: background-color 0.3s ease;
-}
-
-.tech-tags span:hover {
-    background-color: var(--accent-color);
-    color: var(--text-highlight);
 }
