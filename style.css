@@ -52,13 +52,18 @@ header h1 {
     font-weight: 700;
     color: var(--text-highlight);
     margin-bottom: 0.5rem;
-    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    -webkit-text-stroke: 1.5px var(--bg-color); /* Add a stroke outline */
+    paint-order: stroke fill; /* Ensures stroke is drawn behind the text fill */
 }
 header p {
     font-size: 1.25rem;
     font-weight: 400;
     color: var(--accent-color-primary); /* Use accent color */
     letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    -webkit-text-stroke: 0.5px var(--bg-color); /* Add a thinner stroke for subtitle */
+    paint-order: stroke fill;
 }
 .typing-cursor {
     display: inline-block;
