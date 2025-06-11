@@ -1,124 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victor Olivo - Software Engineer</title>
     <!-- Custom SVG Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%232ea043'>VO</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%232ea043'>VO</text></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Header with Particle BG -->
+
     <header>
-        <div id="particles-js"></div>
         <div class="header-content">
             <h1>Victor Olivo</h1>
             <p id="subtitle">Aspiring Software Engineer</p>
         </div>
     </header>
-
     <!-- Navigation Bar -->
     <nav>
-        <a href="https://www.linkedin.com/in/victorolivoiii/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+        <a href="https://www.linkedin.com/in/victorolivoiii/" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn Profile">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="social-icon">
-                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93-.91 0-1.38.71-1.62 1.25-.09.19-.12.44-.12.7v4.72h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.28 1.07 3.28 4.44z"></path>
+                <path
+                    d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93-.91 0-1.38.71-1.62 1.25-.09.19-.12.44-.12.7v4.72h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.28 1.07 3.28 4.44z">
+                </path>
             </svg>
         </a>
-        <a href="https://github.com/victorolivo24" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+        <a href="https://github.com/victorolivo24" target="_blank" rel="noopener noreferrer"
+            aria-label="GitHub Profile">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="social-icon">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
+                </path>
             </svg>
         </a>
     </nav>
-    
+
     <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
-        <div class="about-content">
-            <p>I'm a Computer Science student at Rutgers University with a passion for using technology to understand human behavior and solve real-world problems.</p>
-            <p>With experience in both back-end (Java, Python) and front-end (React, JavaScript) development, I'm currently seeking new opportunities to apply my skills, contribute to meaningful projects, and grow as a software engineer.</p>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <h2>Education</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Rutgers University–New Brunswick</h3>
-                    <h4>Bachelor's Degree, Computer Science (GPA: 4.0)</h4>
-                    <span class="timeline-date">2024 - 2027</span>
-                    <p><strong>Minor:</strong> Psychology</p>
-                    <p><strong>Affiliations:</strong> Honors College, ColorStack, HSF Scholar, Society of Hispanic Professional Engineers, Rutgers Catholic, Brilliant Black Minds, AI4ALL</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Paramus High School</h3>
-                    <h4>High Honor Roll (Weighted GPA: 4.86)</h4>
-                    <span class="timeline-date">2019 - 2024</span>
-                    <p><strong>Activities:</strong> National Honor Society, Spanish Honor Society, Spanish Club</p>
-                </div>
+        <div class="about-container">
+            <img src="headshot.jpg" alt="A headshot of Victor Olivo" class="headshot">
+            <div class="about-text">
+                <p>I'm a Computer Science student at Rutgers University with a passion for using technology to
+                    understand human behavior and solve real-world problems.</p>
+                <p>With experience in both back-end (Java, Python) and front-end (React, JavaScript) development, I'm
+                    currently seeking new opportunities to apply my skills, contribute to meaningful projects, and grow
+                    as a software engineer.</p>
+                <a href="resume.pdf" target="_blank" class="button button-about">View My Resume</a>
             </div>
         </div>
     </section>
 
+    <!-- Main Content Wrapper -->
     <main>
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Rutgers University–New Brunswick</h3>
+                        <h4>Bachelor's Degree, Computer Science (GPA: 4.0)</h4>
+                        <span class="timeline-date">2024 - 2027</span>
+                        <p><strong>Minor:</strong> Psychology</p>
+                        <p><strong>Activities:</strong> Honors College, ColorStack, Paul Robeson Success Institute</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Paramus High School</h3>
+                        <h4>High Honor Roll (Weighted GPA: 4.86)</h4>
+                        <span class="timeline-date">2019 - 2024</span>
+                        <p><strong>Activities:</strong> National Honor Society, Spanish Honor Society, Spanish Club</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
         <section id="projects">
             <h2>My Projects</h2>
             <div class="project">
                 <h3>Vault: Secured File Sharing & Message Board</h3>
-                <p>A full-stack application designed to provide teams with a secure digital platform for file-sharing and messaging. It leverages VirusTotal for malware detection and HMAC hash authentication for user verification.</p>
+                <p>A full-stack application designed to provide teams with a secure digital platform for file-sharing
+                    and messaging. It leverages VirusTotal for malware detection and HMAC hash authentication for user
+                    verification.</p>
                 <p class="award"><strong>🏆 1st Place Winner at RutgersXFiserv Hackathon</strong></p>
                 <div class="tech-tags">
-                    <span>Python</span><span>Flask</span><span>HTML</span><span>CSS</span><span>AES</span><span>VirusTotal API</span><span>JSON</span>
+                    <span>Python</span><span>Flask</span><span>HTML</span><span>CSS</span><span>AES</span><span>VirusTotal
+                        API</span><span>JSON</span>
                 </div>
-                <a href="https://github.com/victorolivo24/vault" target="_blank" class="button">View on GitHub</a>
+                <a href="YOUR_VAULT_GITHUB_URL" target="_blank" class="button">View on GitHub</a>
             </div>
             <div class="project">
                 <h3>Commut-Ed: Campus Ride-Sharing App</h3>
-                <p>A full-stack ride-sharing web application to connect students traveling to and from campus. Built with a React frontend and a Java Spring Boot backend, the platform enables users to post, search, and join rides in real time.</p>
+                <p>A full-stack ride-sharing web application to connect students traveling to and from campus. Built
+                    with a React frontend and a Java Spring Boot backend, the platform enables users to post, search,
+                    and join rides in real time.</p>
                 <div class="tech-tags">
                     <span>React</span><span>Java</span><span>Spring Boot</span><span>HTML/CSS</span>
                 </div>
-                <a href="https://github.com/victorolivo24/ride-sharing-app" target="_blank" class="button">View on GitHub</a>
+                <a href="YOUR_COMMUTED_GITHUB_URL" target="_blank" class="button">View on GitHub</a>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Peer Tutor - Computer Science</h3>
+                        <span class="timeline-date">February 2025 - Present</span>
+                        <h4>Rutgers School of Arts and Sciences Honors Program | New Brunswick, NJ</h4>
+                        <ul>
+                            <li>Provide one-on-one and group tutoring sessions, teaching data structures like linked
+                                lists, trees, graphs, and hash tables.</li>
+                            <li>Develop study materials such as coding exercises and practice problems to enhance
+                                student comprehension.</li>
+                            <li>Assist students in debugging and optimizing Java code, improving their problem-solving
+                                skills and coding efficiency.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Barber and Entrepreneur</h3>
+                        <span class="timeline-date">July 2020 - Present</span>
+                        <h4>Fade O’Clock Shop / Next Level Above Barbershop | New Brunswick, NJ</h4>
+                        <ul>
+                            <li>Performed 15+ haircuts/week for 4 years, leading to consistent customer satisfaction.
+                            </li>
+                            <li>Conducted market research to create a product line and sold 100+ branded merchandise
+                                within the last year.</li>
+                            <li>Developed a website & app for scheduling appointments and accepting online payments via
+                                Apple Pay/Credit Card.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-    
-    <!-- Experience Section -->
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Peer Tutor - Computer Science</h3>
-                    <span class="timeline-date">February 2025 - Present</span>
-                    <h4>Rutgers School of Arts and Sciences Honors Program | New Brunswick, NJ</h4>
-                    <ul>
-                        <li>Provide one-on-one and group tutoring sessions, teaching data structures like linked lists, trees, graphs, and hash tables.</li>
-                        <li>Develop study materials such as coding exercises and practice problems to enhance student comprehension.</li>
-                        <li>Assist students in debugging and optimizing Java code, improving their problem-solving skills and coding efficiency.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Barber and Entrepreneur</h3>
-                    <span class="timeline-date">July 2020 - Present</span>
-                    <h4>Fade O’Clock Shop / Next Level Above Barbershop | New Brunswick, NJ</h4>
-                    <ul>
-                        <li>Performed 15+ haircuts/week for 4 years, leading to consistent customer satisfaction.</li>
-                        <li>Conducted market research to create a product line and sold 100+ branded merchandise within the last year.</li>
-                        <li>Developed a website & app for scheduling appointments and accepting online payments via Apple Pay/Credit Card.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+
     <!-- Footer -->
     <footer>
         <div class="contact-info">
@@ -133,7 +160,9 @@
     <button id="scroll-to-top" title="Go to top">↑</button>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

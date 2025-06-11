@@ -1,5 +1,5 @@
 /* ---
-Modern Portfolio Stylesheet
+Modern Portfolio Stylesheet (Corrected)
 --- */
 
 /* --- Google Font Import: Inter --- */
@@ -23,7 +23,6 @@ Modern Portfolio Stylesheet
 html {
     scroll-behavior: smooth;
 }
-
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
@@ -31,11 +30,9 @@ body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Header & Particle Background --- */
+/* --- Header & Vanta Background --- */
 header {
     position: relative;
     text-align: center;
@@ -43,24 +40,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 80vh; /* Make header taller */
+    min-height: 80vh;
     border-bottom: 1px solid var(--border-color);
 }
-
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
 .header-content {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Keep content above Vanta */
 }
-
 header h1 {
     font-size: 4rem;
     font-weight: 700;
@@ -68,15 +54,12 @@ header h1 {
     margin-bottom: 0.5rem;
     text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
 }
-
 header p {
     font-size: 1.25rem;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--accent-color-primary); /* Use accent color */
     letter-spacing: 0.5px;
 }
-
-/* --- Typing Animation --- */
 .typing-cursor {
     display: inline-block;
     width: 3px;
@@ -87,63 +70,78 @@ header p {
     position: relative;
     top: 4px;
 }
-
 @keyframes blink {
-    0%, 100% { background-color: var(--accent-color-primary); }
     50% { background-color: transparent; }
 }
 
-/* --- Navigation Bar (Sticky) --- */
+/* --- Navigation Bar --- */
 nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     padding: 1.25rem 0;
-    background-color: transparent;
-    border-bottom: 1px solid transparent; /* Hidden until sticky */
-    transition: background-color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: center;
     gap: 2.5rem;
 }
-
-nav.nav-sticky {
-    background-color: hsla(217, 28%, 10%, 0.8); /* Semi-transparent */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-}
-
 nav a {
     color: var(--text-secondary);
     transition: color 0.3s ease, transform 0.3s ease;
 }
-
 nav a:hover {
     color: var(--text-highlight);
     transform: translateY(-2px);
 }
-
 .social-icon {
     width: 28px;
     height: 28px;
 }
 
-/* --- Section Styling --- */
-section, main {
-    padding: 5rem 2rem;
+/* --- Main Content & Section Layout --- */
+main {
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 2rem;
+}
+section {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--border-color);
 }
 
+/* --- About Me Section --- */
 #about {
+    max-width: 100%;
+    padding: 5rem 2rem;
+    background-color: var(--primary-card-color);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
-    background-color: var(--primary-card-color);
+}
+#about h2 {
+    margin-bottom: 3rem;
+}
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.headshot {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--border-color);
+    box-shadow: var(--box-shadow-main);
+}
+.about-text {
+    text-align: left;
+}
+.button-about {
+    margin-top: 1.5rem;
+    display: inline-block; /* Aligns with text */
 }
 
-#education, #experience, #projects {
-    border-bottom: 1px solid var(--border-color);
+main > section:last-of-type {
+    border-bottom: none;
 }
 
 /* --- Headings --- */
@@ -160,7 +158,7 @@ h2 {
     position: relative;
     padding: 1rem 0;
 }
-
+/* ... (Rest of timeline styles are unchanged) ... */
 .timeline::before {
     content: '';
     position: absolute;
@@ -170,13 +168,11 @@ h2 {
     width: 2px;
     background: var(--border-color);
 }
-
 .timeline-item {
     position: relative;
     margin-bottom: 3rem;
     opacity: 0;
 }
-
 .timeline-item::before {
     content: '';
     position: absolute;
@@ -189,30 +185,41 @@ h2 {
     border: 5px solid var(--bg-color);
     z-index: 1;
 }
-
-#about .timeline-item::before {
-     border-color: var(--primary-card-color);
-}
-
 .timeline-content {
     position: relative;
     margin-left: 50px;
 }
-
 .timeline-content h3 {
     margin-top: 0;
     color: var(--text-highlight);
     font-size: 1.4rem;
     font-weight: 600;
 }
-
 .timeline-content h4 {
     margin: 0.25rem 0 0.75rem 0;
     color: var(--text-secondary);
     font-weight: 500;
 }
+.timeline-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+.timeline-content ul li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+.timeline-content ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color-primary);
+}
+
 
 /* --- Project Cards --- */
+/* ... (Project styles are unchanged) ... */
 .project {
     background-color: var(--primary-card-color);
     margin-bottom: 2.5rem;
@@ -222,21 +229,17 @@ h2 {
     transition: transform 0.3s ease, border-color 0.3s ease;
     opacity: 0;
 }
-
 .project:hover {
     transform: translateY(-5px);
     border-color: var(--accent-color-primary);
 }
-
 .project h3 {
     margin-top: 0;
     font-size: 1.75rem;
 }
-
 .project p {
     color: var(--text-secondary);
 }
-
 .project .award {
     background: rgba(46, 160, 67, 0.15);
     border: 1px solid var(--accent-color-primary);
@@ -248,14 +251,14 @@ h2 {
     font-weight: 500;
 }
 
-/* --- Tech Tags --- */
+/* --- Tech Tags & Buttons --- */
+/* ... (Tag and button styles are unchanged) ... */
 .tech-tags {
     margin: 1.5rem 0;
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
 }
-
 .tech-tags span {
     background-color: transparent;
     color: var(--accent-color-primary);
@@ -265,12 +268,10 @@ h2 {
     font-size: 0.8rem;
     font-weight: 500;
 }
-
-/* --- Buttons --- */
 .button {
     display: inline-block;
     background-image: var(--accent-gradient);
-    color: var(--text-highlight);
+    color: var(--text-highlight) !important;
     padding: 0.75rem 1.75rem;
     border-radius: 6px;
     text-decoration: none;
@@ -278,32 +279,28 @@ h2 {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: none;
 }
-
 .button:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(46, 160, 67, 0.4);
 }
 
-/* --- Footer --- */
+/* --- Footer & Scroll Button --- */
+/* ... (Footer and scroll button styles are unchanged) ... */
 footer {
     text-align: center;
     padding: 3rem 2rem;
     margin-top: 2rem;
     border-top: 1px solid var(--border-color);
 }
-
 .contact-info a {
     color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .contact-info a:hover {
     color: var(--accent-color-primary);
     text-decoration: underline;
 }
-
-/* --- Scroll to Top Button --- */
 #scroll-to-top {
     position: fixed;
     bottom: 25px;
@@ -321,24 +318,31 @@ footer {
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     z-index: 999;
 }
-
 #scroll-to-top.show {
     opacity: 1;
     visibility: visible;
 }
-
 #scroll-to-top:hover {
     transform: scale(1.1);
 }
 
-/* --- Animation Keyframes --- */
+/* --- Animation --- */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive Media Query --- */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .about-text {
+        text-align: center;
+    }
+    .button-about {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
