@@ -75,4 +75,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         setTimeout(type, 500);
     }
+    const audioData = "https://www.bensound.com/bensound-music/bensound-slowmotion.mp3";
+
+const playBtn = document.getElementById('play-button');
+const pauseBtn = document.getElementById('pause-button');
+
+if (playBtn && pauseBtn) {
+    let audio = new Audio(audioData);
+    audio.loop = true;
+
+    playBtn.addEventListener('click', () => {
+        audio.play().then(() => {
+            playBtn.classList.add('hidden');
+            pauseBtn.classList.remove('hidden');
+        }).catch(e => console.error("Playback error:", e));
+    });
+
+    pauseBtn.addEventListener('click', () => {
+        audio.pause();
+        pauseBtn.classList.add('hidden');
+        playBtn.classList.remove('hidden');
+    });
+}
+
 });
