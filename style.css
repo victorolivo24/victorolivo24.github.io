@@ -101,17 +101,41 @@ nav a:hover {
     height: 28px;
 }
 .music-player {
-    text-align: center;
-    margin: 2rem 0;
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    background-color: #1c1c1c;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: all 0.3s ease;
 }
-#play-button, #pause-button {
-    font-size: 1.2rem;
+
+.music-player.sticky {
+      position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border-radius: 8px 0 0 8px;
+}
+
+#play-button,
+#pause-button {
+    font-size: 1rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    background: #2ea043;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0.2rem 0;
 }
+
 .hidden {
     display: none;
 }
+
 
 /* --- Main Content & Section Layout --- */
 main {

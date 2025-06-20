@@ -1,5 +1,5 @@
 // --- MAIN DOCUMENT READY LISTENER ---
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     // --- VANTA.JS HALO ANIMATION ---
     // Make sure to include three.js and vanta.halo.min.js in your HTML
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const cursor = document.createElement('span');
         cursor.className = 'typing-cursor';
         const parent = subtitleElement.parentElement;
-        if(parent) {
+        if (parent) {
             parent.insertBefore(cursor, subtitleElement.nextSibling);
         }
 
@@ -75,27 +75,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         setTimeout(type, 500);
     }
-    const audioData = "audio/smooth-jazz.mp3";
+    const audioData = "audio/smooth-jazz.mp3"; // your local file
 
-const playBtn = document.getElementById('play-button');
-const pauseBtn = document.getElementById('pause-button');
+    const playBtn = document.getElementById('play-button');
+    const pauseBtn = document.getElementById('pause-button');
+    const musicPlayer = document.querySelector('.music-player');
 
-if (playBtn && pauseBtn) {
-    let audio = new Audio(audioData);
-    audio.loop = true;
+    if (playBtn && pauseBtn && musicPlayer) {
+        let audio = new Audio(audioData);
+        audio.loop = true;
 
-    playBtn.addEventListener('click', () => {
-        audio.play().then(() => {
-            playBtn.classList.add('hidden');
-            pauseBtn.classList.remove('hidden');
-        }).catch(e => console.error("Playback error:", e));
-    });
+        const showStickyPlayer = () => musicPlayer.classList.add('sticky');
+        const hideStickyPlayer = () => musicPlayer.classList.remove('sticky');
 
-    pauseBtn.addEventListener('click', () => {
-        audio.pause();
-        pauseBtn.classList.add('hidden');
-        playBtn.classList.remove('hidden');
-    });
-}
+        playBtn.addEventListener('click', () => {
+            audio.play().then(() => {
+                playBtn.classList.add('hidden');
+                pauseBtn.classList.remove('hidden');
+                showStickyPlayer();
+            }).catch(e => console.error("Playback error:", e));
+        });
+
+        pauseBtn.addEventListener('click', () => {
+            audio.pause();
+            pauseBtn.classList.add('hidden');
+            playBtn.classList.remove('hidden');
+            hideStickyPlayer();
+        });
+    }
 
 });
