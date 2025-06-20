@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         setTimeout(type, 500);
     }
-    const audioData = "https://www.bensound.com/bensound-music/bensound-slowmotion.mp3";
+    const audioData = "audio/smooth-jazz.mp3";
 
 const playBtn = document.getElementById('play-button');
 const pauseBtn = document.getElementById('pause-button');
