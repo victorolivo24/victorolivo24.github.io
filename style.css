@@ -306,6 +306,34 @@ h2::after {
     margin: 1rem 0;
     font-weight: 500;
 }
+.demo-card {
+    background-color: #161b22;
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.demo-card h4 {
+    color: #c9d1d9;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.demo-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.demo-image:hover {
+    transform: scale(1.01);
+}
+
 
 /* --- Tech Tags & Buttons --- */
 .tech-tags {
