@@ -306,34 +306,68 @@ h2::after {
     margin: 1rem 0;
     font-weight: 500;
 }
-.demo-card {
-    background-color: #161b22;
-    padding: 1rem;
-    border-radius: 12px;
-    margin: 1.5rem 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+.demo-preview {
     text-align: center;
+    margin-top: 1rem;
 }
 
-.demo-card h4 {
-    color: #c9d1d9;
-    margin-bottom: 0.8rem;
-    font-weight: 500;
-    font-size: 1.1rem;
+.demo-caption {
+    font-size: 0.95rem;
+    color: #999;
+    margin-bottom: 0.3rem;
 }
 
-.demo-image {
-    max-width: 100%;
-    height: auto;
+.demo-thumbnail {
+    width: 60%;
+    max-width: 500px;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.demo-thumbnail:hover {
+    opacity: 1;
+    transform: scale(1.015);
+}
+
+/* Lightbox styling */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 80%;
     border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease;
 }
 
-.demo-image:hover {
-    transform: scale(1.01);
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
+.close:hover {
+    color: #ccc;
+}
 
 /* --- Tech Tags & Buttons --- */
 .tech-tags {

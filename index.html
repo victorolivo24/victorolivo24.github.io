@@ -93,9 +93,18 @@
             <div class="project">
                 <h3>AI-Powered TikTok Trend Analyzer</h3>
 
-                <div class="demo-image-container">
-                    <img src="images/tiktok-demo.png" alt="TikTok Trend Analyzer Demo Screenshot" class="demo-image">
+                <div class="demo-preview">
+                    <p class="demo-caption">View demo of the dashboard</p>
+                    <img src="images/tiktok-demo.png" alt="TikTok Trend Analyzer Demo Screenshot" class="demo-thumbnail"
+                        id="demo-thumbnail" />
                 </div>
+
+                <!-- Lightbox Modal -->
+                <div id="lightbox" class="lightbox">
+                    <span class="close">&times;</span>
+                    <img class="lightbox-content" id="lightbox-img">
+                </div>
+
 
                 <p>A full-stack web application that automates TikTok market research, reducing the time to identify
                     niche content trends from hours to under two minutes.</p>

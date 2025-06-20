@@ -103,5 +103,26 @@ document.addEventListener('DOMContentLoaded', function () {
             hideStickyPlayer();
         });
     }
+    const thumbnail = document.getElementById("demo-thumbnail");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close");
+
+    if (thumbnail && lightbox && lightboxImg && closeBtn) {
+        thumbnail.addEventListener("click", () => {
+            lightbox.style.display = "block";
+            lightboxImg.src = thumbnail.src;
+        });
+
+        closeBtn.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+
+        window.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = "none";
+            }
+        });
+    }
 
 });
