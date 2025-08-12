@@ -2,23 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Victor Olivo - Software Engineer</title>
     <!-- Custom SVG Favicon -->
     <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%232ea043'>VO</text></svg>">
-    <link rel="stylesheet" href="style.css">
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%232ea043'>VO</text></svg>'" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description"
+        content="Victor Olivo III — AI/ML + full‑stack engineer. Projects in BERT sentiment modeling, secure file sharing, and automation tools." />
 </head>
 
 <body>
-
     <header>
         <div class="header-content">
             <h1>Victor Olivo</h1>
-            <p id="subtitle">Aspiring Software Engineer</p>
+            <p id="subtitle">AI/ML Engineer • Full‑Stack Developer</p>
         </div>
     </header>
+
     <!-- Navigation Bar -->
     <nav>
         <a href="https://www.linkedin.com/in/victorolivoiii/" target="_blank" rel="noopener noreferrer"
@@ -37,26 +39,45 @@
                 </path>
             </svg>
         </a>
+        <a href="https://victorolivo24.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Portfolio">🌐
+            Portfolio</a>
+
         <div class="music-player">
             <button id="play-button">🎵 Play Smooth Jazz</button>
             <button id="pause-button" class="hidden">⏸ Pause</button>
         </div>
-
     </nav>
 
     <!-- About Me Section -->
     <section id="about">
         <h2>About Me</h2>
         <div class="about-container">
-            <img src="headshot.jpg" alt="A headshot of Victor Olivo" class="headshot">
+            <img src="headshot.jpg" alt="A headshot of Victor Olivo" class="headshot" />
             <div class="about-text">
-                <p>I'm a Computer Science student at Rutgers University with a passion for using technology to
-                    understand human behavior and solve real-world problems.</p>
-                <p>With experience in both back-end (Java, Python) and front-end (React, JavaScript) development, I'm
-                    currently seeking new opportunities to apply my skills, contribute to meaningful projects, and grow
-                    as a software engineer.</p>
+                <p>
+                    I'm a Computer Science student at Rutgers University with a passion for building AI‑powered products
+                    and
+                    using data to solve real‑world problems.
+                </p>
+                <p>
+                    I work across the stack — Python/Flask, Java/Spring, and React — and I’ve trained and deployed ML
+                    models in
+                    production contexts.
+                </p>
                 <a href="resume.pdf" target="_blank" class="button button-about">View My Resume</a>
             </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="tech-tags">
+            <span>Python</span><span>Java</span><span>JavaScript</span><span>C</span><span>React</span><span>Node.js</span>
+            <span>Flask</span><span>Spring Boot</span><span>SQLAlchemy</span><span>PostgreSQL</span><span>MongoDB</span>
+            <span>TensorFlow</span><span>scikit‑learn</span><span>Hugging
+                Face</span><span>Pandas</span><span>Selenium</span>
+            <span>AWS (EC2, S3, RDS, CloudFront)</span><span>Agile/Scrum</span>
         </div>
     </section>
 
@@ -69,173 +90,189 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Rutgers University–New Brunswick</h3>
-                        <h4>Bachelor's Degree, Computer Science (GPA: 4.0)</h4>
-                        <span class="timeline-date">2024 - 2027</span>
+                        <h4>B.S. Computer Science (GPA: 4.0)</h4>
+                        <span class="timeline-date">2024 – 2027</span>
                         <p><strong>Minor:</strong> Psychology</p>
-                        <p><strong>Relevant Coursework:</strong> Data Structures, Discrete Structures I & II, Computer Architecture, Software Methodology</p>
-                        <p><strong>Publication:</strong> <em>Personalization & Privacy: The Give & Take Paradox</em>, analyzing algorithmic filtering & data practices through a privacy
-                        lens- Presented at Rutgers University Research Writing Conference (April 2025)</p>
-                        <p><strong>Activities:</strong> Honors College, ColorStack, Rutgers Catholic, Society of Hispanic Engineers, Paul Robeson Success Institute</p>
+                        <p><strong>Relevant Coursework:</strong> Data Structures, Discrete Structures I & II, Computer
+                            Architecture, Software Methodology, Linear Algebra</p>
+                        <p><strong>Publication:</strong> <em>Personalization & Privacy: The Give & Take Paradox</em> —
+                            presented at the Rutgers University Research Writing Conference (April 2025)</p>
+                        <p><strong>Activities:</strong> Honors College, ColorStack, Rutgers Catholic, SHPE</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Paramus High School</h3>
                         <h4>High Honor Roll (Weighted GPA: 4.86)</h4>
-                        <span class="timeline-date">2019 - 2024</span>
+                        <span class="timeline-date">2019 – 2024</span>
                         <p><strong>Activities:</strong> National Honor Society, Spanish Honor Society, Spanish Club</p>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- Experience Section -->
         <section id="experience">
             <h2>Experience</h2>
             <div class="timeline">
+                <!-- NEW: Hawl Technologies (resume) -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Data Team Lead Intern</h3>
+                        <span class="timeline-date">July 2025 – Present</span>
+                        <h4>Hawl Technologies, LLC | Remote</h4>
+                        <ul>
+                            <li>Lead development of a privacy‑first Chrome extension enabling persistent memory across
+                                ChatGPT, Claude, and Gemini for 2M+ power users.</li>
+                            <li>Coordinate a 3‑member data team; set deadlines and align with UX/backend to ship on
+                                time.</li>
+                            <li>Provide product direction on AI‑powered summarization and semantic search features.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- UPDATED: Pariveda now ended Aug 2025 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Career Accelerator Participant</h3>
-                        <span class="timeline-date">June 2025 - Present</span>
+                        <span class="timeline-date">June 2025 – August 2025</span>
                         <h4>Pariveda | Remote</h4>
                         <ul>
-                            <li>Participating in a 6-week software consulting program with workshops on technical skill building
-                                & case-based problem solving.</li>
-                            <li>Applying user-centered design principles to develop a digital solution leveraging AI/ML and
-                                smart infrastructure to help regional hotels compete with short-term rental platforms, enhancing
-                                personalization and profitability.</li>
-                            <li>Leading problem discovery, research synthesis, ideation, and solution prototyping to define an
-                                AI-powered customer journey, deliver technical architecture recommendations, and present
-                                actionable strategies to transform the hospitality experience.</li>
+                            <li>Completed a 6‑week software consulting program with case‑based problem solving.</li>
+                            <li>Applied user‑centered design to build an AI/ML‑enhanced solution helping regional hotels
+                                compete with short‑term rentals.</li>
+                            <li>Prototyped an AI‑powered customer journey and presented technical architecture
+                                recommendations.</li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- UPDATED: The Takeoff Institute now ended Aug 2025 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Summer Fellow</h3>
-                        <span class="timeline-date">June 2025 - Present</span>
+                        <span class="timeline-date">June 2025 – August 2025</span>
                         <h4>The Takeoff Institute | Remote</h4>
                         <ul>
-                            <li>Participating in a 10-week fellowship focused on career development & building technical
-                                solutions to expand educational access.</li>
-                            <li>Designing scalable backend architecture for Takeoff University, specifying AWS S3 for file
-                                storage, PostgreSQL for metadata, and ElasticSearch for advanced search; incorporate secure APIs
-                                and data encryption to protect student information.</li>
-                            <li>Researching and documenting database schema with role-based access controls, content tagging,
-                                and cohort-specific permissions to enable personalized student experiences; outline an
-                                implementation plan to support a secure, nationwide digital rollout.</li>
+                            <li>Designed backend architecture for a national digital education platform using AWS S3,
+                                PostgreSQL, and ElasticSearch.</li>
+                            <li>Developed RESTful APIs with token‑based auth and encryption for secure, scalable content
+                                delivery.</li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- UPDATED: AI4ALL still present -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Ignite Summer Fellow</h3>
-                        <span class="timeline-date">May 2025 - Present</span>
+                        <span class="timeline-date">May 2025 – Present</span>
                         <h4>AI4ALL | Remote</h4>
                         <ul>
-                            <li>Enhancing AI/ML engineering skills through a 20-week accelerator with industry mentorship &
-                                hands-on technical projects.</li>
-                            <li>Engineered Startup Success Predictor: a production-ready ML pipeline (Python, scikit-learn,
-                                Gradient Boosting Regression) processing 5,000+ startup records to forecast viability and
-                                surface key revenue/funding drivers.</li>
+                            <li>20‑week accelerator with industry mentorship & hands‑on ML engineering projects.</li>
+                            <li>Built a production‑ready ML pipeline (Python, scikit‑learn, Gradient Boosting
+                                Regression) processing 5,000+ startup records.</li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- KEEP: Peer Tutor (not on resume but you asked to keep non‑resume items) -->
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Peer Tutor - Computer Science</h3>
-                        <span class="timeline-date">February 2025 - Present</span>
-                        <h4>Rutgers School of Arts and Sciences Honors Program | New Brunswick, NJ</h4>
+                        <h3>Peer Tutor — Computer Science</h3>
+                        <span class="timeline-date">February 2025 – Present</span>
+                        <h4>Rutgers SAS Honors Program | New Brunswick, NJ</h4>
                         <ul>
-                            <li>Provide one-on-one and group tutoring sessions, teaching data structures like linked lists,
-                                trees, graphs, and hash tables.</li>
-                            <li>Develop study materials such as coding exercises and practice problems to enhance student
-                                comprehension.</li>
-                            <li>Assist students in debugging and optimizing Java code, improving their problem-solving skills
-                                and coding efficiency.</li>
+                            <li>1:1 and group tutoring in data structures (lists, trees, graphs, hash tables).</li>
+                            <li>Created practice problem sets and debugging sessions for Java coursework.</li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- KEEP: Barber & Entrepreneur -->
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Barber and Entrepreneur</h3>
-                        <span class="timeline-date">July 2020 - Present</span>
+                        <span class="timeline-date">July 2020 – Present</span>
                         <h4>Fade O’Clock Shop / Next Level Above Barbershop | New Brunswick, NJ</h4>
                         <ul>
-                            <li>Performed 15+ haircuts/week for 4 years, leading to consistent customer satisfaction.</li>
-                            <li>Conducted market research to create a product line and sold 100+ branded merchandise within the
-                                last year.</li>
-                            <li>Developed a website & app for scheduling appointments and accepting online payments via Apple
-                                Pay/Credit Card.</li>
+                            <li>Performed 15+ haircuts/week for 4 years with consistent client satisfaction.</li>
+                            <li>Ran small‑batch merch line; sold 100+ branded items in the last year.</li>
+                            <li>Built website/app for bookings and payments (Apple Pay/Credit Card).</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- Projects Section -->
         <section id="projects">
             <h2>My Projects</h2>
+
+            <!-- UPDATED: Out of the Loop per resume (custom BERT + AWS) -->
             <div class="project">
-                <h3>Out of the Loop - Intellectual Diversity Engine</h3>
-                <p>A Flask-based platform with JWT authentication and secure single sign-on to let users track,
-                    categorize, and analyze news articles. Features a resilient scraping pipeline with BeautifulSoup and Selenium to
-                    handle paywalls and dynamic content.</p>
-                
+                <h3>Out of the Loop — AI‑Powered News Sentiment Platform</h3>
+                <p>
+                    A full‑stack media analysis app deployed on AWS. Trained a custom BERT regression model (MAE 0.14)
+                    for real‑time
+                    news sentiment scoring without external API dependencies. Backend on EC2 (Flask), PostgreSQL on RDS,
+                    and React
+                    frontend on S3/CloudFront.
+                </p>
                 <div class="tech-tags">
-                    <span>Python</span><span>Flask</span><span>SQLAlchemy</span><span>BeautifulSoup</span><span>Selenium</span><span>scikit-learn</span><span>Hugging
-                        Face Transformers</span>
+                    <span>Python</span><span>Flask</span><span>SQLAlchemy</span><span>BeautifulSoup</span><span>Selenium</span>
+                    <span>scikit‑learn</span><span>Hugging Face</span><span>AWS EC2</span><span>AWS RDS</span><span>AWS
+                        S3</span><span>CloudFront</span>
                 </div>
             </div>
-            
-            <div class="project">
-                <h3>AI-Powered TikTok Trend Analyzer</h3>
 
+            <!-- KEEP: TikTok Trend Analyzer -->
+            <div class="project">
+                <h3>AI‑Powered TikTok Trend Analyzer</h3>
                 <div class="demo-preview">
                     <p class="demo-caption">View demo of the dashboard</p>
                     <img src="images/tiktok-demo.png" alt="TikTok Trend Analyzer Demo Screenshot" class="demo-thumbnail"
                         id="demo-thumbnail" />
                 </div>
-
                 <!-- Lightbox Modal -->
                 <div id="lightbox" class="lightbox">
                     <span class="close">&times;</span>
-                    <img class="lightbox-content" id="lightbox-img">
+                    <img class="lightbox-content" id="lightbox-img" />
                 </div>
-
-
-                <p>A full-stack web application that automates TikTok market research, reducing the time to identify
-                    niche content trends from hours to under two minutes.</p>
+                <p>
+                    A full‑stack web app that automates TikTok market research, cutting time to insights from hours to
+                    minutes.
+                </p>
                 <div class="tech-tags">
-                    <span>Python</span>
-                    <span>Flask</span>
-                    <span>Playwright</span>
-                    <span>Pandas</span>
-                    <span>NLTK</span>
-                    <span>Gemini AI</span>
-                    <span>JavaScript</span>
-                    <span>Chart.js</span>
-                    <span>HTML/CSS</span>
+                    <span>Python</span><span>Flask</span><span>Playwright</span><span>Pandas</span><span>NLTK</span>
+                    <span>Gemini AI</span><span>JavaScript</span><span>Chart.js</span><span>HTML/CSS</span>
                 </div>
                 <a href="https://github.com/victorolivo24/tiktok-trend-analyzer" target="_blank" class="button">View on
                     GitHub</a>
             </div>
 
+            <!-- KEEP: Vault project -->
             <div class="project">
                 <h3>Vault: Secured File Sharing & Message Board</h3>
-                <p>A full-stack application designed to provide teams with a secure digital platform for file-sharing
-                    and messaging. It leverages VirusTotal for malware detection and HMAC hash authentication for user
-                    verification.</p>
-                <p class="award"><strong>🏆 1st Place Winner at RutgersXFiserv Hackathon</strong></p>
+                <p>
+                    A secure collaboration platform with VirusTotal malware scanning and HMAC‑based verification.
+                </p>
+                <p class="award"><strong>🏆 1st Place Winner — Rutgers × Fiserv Hackathon</strong></p>
                 <div class="tech-tags">
                     <span>Python</span><span>Flask</span><span>HTML</span><span>CSS</span><span>AES</span><span>VirusTotal
                         API</span><span>JSON</span>
                 </div>
                 <a href="https://github.com/victorolivo24/vault" target="_blank" class="button">View on GitHub</a>
             </div>
+
+            <!-- KEEP: Commut‑Ed project -->
             <div class="project">
-                <h3>Commut-Ed: Campus Ride-Sharing App</h3>
-                <p>A full-stack ride-sharing web application to connect students traveling to and from campus. Built
-                    with a React frontend and a Java Spring Boot backend, the platform enables users to post, search,
-                    and join rides in real time.</p>
+                <h3>Commut‑Ed: Campus Ride‑Sharing App</h3>
+                <p>
+                    A ride‑sharing web application to connect students traveling to and from campus. React frontend +
+                    Java Spring
+                    Boot backend.
+                </p>
                 <div class="tech-tags">
                     <span>React</span><span>Java</span><span>Spring Boot</span><span>HTML/CSS</span>
                 </div>
@@ -243,8 +280,6 @@
                     GitHub</a>
             </div>
         </section>
-
-        
     </main>
 
     <!-- Footer -->
