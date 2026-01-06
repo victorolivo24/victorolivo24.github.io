@@ -103,24 +103,34 @@ document.addEventListener('DOMContentLoaded', function () {
             hideStickyPlayer();
         });
     }
-    const thumbnail = document.getElementById("demo-thumbnail");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const closeBtn = document.querySelector(".close");
+    const lightbox = document.getElementById("image-lightbox");
+    const lightboxImg = document.getElementById("image-lightbox-img");
 
-    if (thumbnail && lightbox && lightboxImg && closeBtn) {
-        thumbnail.addEventListener("click", () => {
-            lightbox.style.display = "block";
-            lightboxImg.src = thumbnail.src;
+    if (lightbox && lightboxImg) {
+        const closeBtn = lightbox.querySelector(".close");
+        const lightboxTargets = Array.from(document.querySelectorAll("img")).filter(img => !lightbox.contains(img));
+
+        lightboxTargets.forEach(img => {
+            img.classList.add("lightbox-enabled");
+            img.addEventListener("click", () => {
+                lightbox.style.display = "block";
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt || "Enlarged view";
+            });
         });
 
-        closeBtn.addEventListener("click", () => {
+        const closeLightbox = () => {
             lightbox.style.display = "none";
-        });
+            lightboxImg.src = "";
+        };
 
-        window.addEventListener("click", (e) => {
+        if (closeBtn) {
+            closeBtn.addEventListener("click", closeLightbox);
+        }
+
+        lightbox.addEventListener("click", (e) => {
             if (e.target === lightbox) {
-                lightbox.style.display = "none";
+                closeLightbox();
             }
         });
     }
