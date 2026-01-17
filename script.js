@@ -52,6 +52,54 @@ document.addEventListener('DOMContentLoaded', function () {
     animateOnScroll('.project');
     animateOnScroll('.timeline-item');
 
+    // --- SECTION NAV HIGHLIGHT ---
+    const sectionNav = document.querySelector('.section-nav');
+    if (sectionNav) {
+        const navLinks = Array.from(sectionNav.querySelectorAll('.section-nav-link'));
+        const sections = navLinks
+            .map(link => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+
+        if (sections.length) {
+            const setActive = (id) => {
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                });
+            };
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const targetId = link.getAttribute('href').slice(1);
+                    setActive(targetId);
+                });
+            });
+
+            const visibility = new Map();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    visibility.set(entry.target.id, entry.intersectionRatio);
+                });
+
+                let bestId = sections[0].id;
+                let bestRatio = -1;
+                sections.forEach(section => {
+                    const ratio = visibility.get(section.id) || 0;
+                    if (ratio > bestRatio) {
+                        bestRatio = ratio;
+                        bestId = section.id;
+                    }
+                });
+
+                if (bestRatio > 0) {
+                    setActive(bestId);
+                }
+            }, { rootMargin: '-25% 0px -50% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] });
+
+            sections.forEach(section => observer.observe(section));
+            setActive(sections[0].id);
+        }
+    }
+
     // --- TYPING ANIMATION ---
     const subtitleElement = document.getElementById('subtitle');
     if (subtitleElement) {
